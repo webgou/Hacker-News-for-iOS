@@ -3,7 +3,9 @@
 
 function refreshList(list) {
 	if (list == "home") {
-		loadTopNews(true);
+		$(".homeListItem").remove();
+		showLoading();
+		loadTopNews();
 	} else if (list == "new") {
 		// New HN here
 	} else if (list == "submitted") {

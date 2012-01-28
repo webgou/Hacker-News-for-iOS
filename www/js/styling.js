@@ -47,6 +47,7 @@ function showSectionWithId(sectionId) {
 }
 
 function showLoading() {
+	fadeIn("#loading");
 	waitLoading = setInterval(function() {
 		var wait = document.getElementById("wait");
 

@@ -13,26 +13,20 @@ function onDeviceReady() {
 	nativeControls.selectTabBarItem("home");
 
 	showLoading();
-	loadTopNews(false);
+	loadTopNews();
 }
 
-function loadTopNews(refresh) {
+function loadTopNews() {
 	$.getJSON("http://api.ihackernews.com/page",
 		{ format: "json" },
 		function(data) {
 			$.each(data.items, function(i, item) {
-				$("#homeList").append("<li id='" + item.id + "'><a href='#" + item.id + "' onClick='showDetails(\"" + item.id + "\")' id='firstRow'><span class='liName'>" + item.title + "</span><span class='liAuthor'>" + item.postedBy + "</span><span class='liVotes'>" + item.points + "<br /><span class='pRead'>vts/comm</span></span><span class='liComments'>" + item.commentCount + "</span></a></li>");
+				$("#homeList").append("<li id='" + item.id + "' class='homeListItem'><a href='#" + item.id + "' onClick='showDetails(\"" + item.id + "\")' id='firstRow'><span class='liName'>" + item.title + "</span><span class='liAuthor'>" + item.postedBy + "</span><span class='liVotes'>" + item.points + "<br /><span class='pRead'>vts/comm</span></span><span class='liComments'>" + item.commentCount + "</span></a></li>");
 			});
 
-			if (refresh == true) {
-				setTimeout(function () {
-					scrollHome.refresh();
-				}, 0);
-			} else {
-				setTimeout(function () {
-					hideLoading();
-					scrollHome.refresh();
-				}, 0);
-			}
+			setTimeout(function () {
+				hideLoading();
+				scrollHome.refresh();
+			}, 0);
 		});
 }

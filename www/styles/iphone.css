@@ -59,10 +59,31 @@ header {
 	text-rendering: optimizeLegibility;
 }
 
-.inner_text_shadow
-{
-	text-shadow: rgba(0, 0, 0, 0.6) 0px -1px 1px;
+#refreshButton {
+	position: absolute;
+	z-index: 1001;
+	top: 3px;
+	right: 5px;
+	height: 44px;
+	width: 50px;
+	text-align: center;
+	background-image: url("../images/Button.png");
+	background-size: 50px 37px;
+	background-repeat: no-repeat;
+	-webkit-user-select: none;
+	/*-webkit-tap-highlight-color: transparent;*/
+}
+
+#refreshButton p {
+	padding-top: 11px;
+	font-size: 15px;
+	-webkit-user-select: none;
+	-webkit-tap-highlight-color: transparent;
 	text-rendering: optimizeLegibility;
+}
+
+#refreshButton p img {
+	max-height: 15px;
 }
 
 #Home {
@@ -188,4 +209,10 @@ header {
 	color: white;
 	line-height: 28px;
 	border-width: 0 8px 0 8px;
+}
+
+.inner_text_shadow
+{
+	text-shadow: rgba(0, 0, 0, 0.6) 0px -1px 1px;
+	text-rendering: optimizeLegibility;
 }
