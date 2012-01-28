@@ -69,7 +69,7 @@ function onDeviceReady() {
 	nativeControls.createTabBarItem(
 		"about",
 		"About",
-		"/www/tabs/wrench.png",
+		"/www/tabs/info.png",
 		{"onSelect": function() {
 			switchToSectionWithId('About');
 			setTimeout(function () {
