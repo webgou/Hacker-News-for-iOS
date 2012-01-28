@@ -56,7 +56,7 @@ function onDeviceReady() {
 	nativeControls.createTabBarItem(
 		"settings",
 		"Settings",
-		"/www/tabs/wrench.png",
+		"/www/tabs/gear.png",
 		{"onSelect": function() {
 			switchToSectionWithId('Settings');
 			setTimeout(function () {
@@ -69,7 +69,7 @@ function onDeviceReady() {
 	nativeControls.createTabBarItem(
 		"about",
 		"About",
-		"/www/tabs/info.png",
+		"/www/tabs/suitcase.png",
 		{"onSelect": function() {
 			switchToSectionWithId('About');
 			setTimeout(function () {
