@@ -34,7 +34,10 @@ function loadTopNews() {
 function detailNews(id) {
 	var url = "http://api.ihackernews.com/post/" + id;
 	fadeOut("#Home");
+	fadeIn("#backButton");
+	fadeOut("#refreshButton");
 	showLoading();
+	stackState = "detail";
 	
 	$.getJSON(url,
 		{ format: "json" },
@@ -47,4 +50,26 @@ function detailNews(id) {
 			hideLoading();
 			switchToSectionWithId('detailView');
 		});
+}
+
+function goBack() {
+	if (stackState == "detail") {
+		fadeIn("#refreshButton");
+		fadeOut("#backButton");
+		switchToSectionWithId('Home');
+		setTimeout(function () {
+			scrollHome.refresh();
+		}, 0);
+	} else if (stackState == "comments") {
+		fadeIn("#addBook");
+		fadeOut("#backButton");
+		switchToSectionWithId('Home');
+		setTimeout(function () {
+			scrollBooks.refresh();
+		}, 0);
+	} else {
+		fadeIn("#editBook");
+		bookEntryState = "show";
+		switchToSectionWithId('detailView');
+	}
 }

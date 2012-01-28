@@ -36,6 +36,7 @@
 	</head>
 	<body onLoad="loaded()">
 		<header id="head" class="inner_text_shadow">
+			<span id="backButton" onClick="goBack()" class="hidden"><p>Back</p></span>
 			Hacker News
 			<span id="refreshButton" onClick="refreshList('home')"><p><img src="images/retweet.png" /></p></span>
 		</header>
@@ -63,6 +64,21 @@
 					<span id="detailedVotes"></span>
 					<span id="spacerVC">@</span>
 					<span id="detailedComments"></span>
+				</div>
+				
+				<br />
+				<br />
+				
+				<div id="detailedViewPage" class="apple-button-box">
+					<center class="apple-text">
+						<b>Read Article</b>
+					</center>
+				</div>
+				
+				<div id="detailedViewComments" class="apple-button-box">
+					<center class="apple-text">
+						<b>View Comments</b>
+					</center>
 				</div>
 			</div>
 		</section>
@@ -100,7 +116,7 @@
 				</center>
 				
 				<br />
-				<div id="suggestBox" onClick="location.href = 'mailto:eeepc904@gmail.com?subject=Markers Feature Suggestion: ';">
+				<div id="suggestBox" onClick="location.href = 'mailto:eeepc904@gmail.com?subject=Markers Feature Suggestion: ';" class="apple-button-box">
 					<center class="apple-text">
 						<b>Suggest Features</b>
 					</center>

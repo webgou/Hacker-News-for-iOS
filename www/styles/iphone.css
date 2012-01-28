@@ -59,6 +59,30 @@ header {
 	text-rendering: optimizeLegibility;
 }
 
+#backButton {
+	position: absolute;
+	z-index: 1001;
+	top: 3px;
+	left: 5px;
+	height: 44px;
+	width: 64px;
+	text-align: center;
+	background-image: url("../images/backButton.png");
+	background-size: 64px 37px;
+	background-repeat: no-repeat;
+	-webkit-user-select: none;
+	-webkit-tap-highlight-color: transparent;
+}
+
+#backButton p {
+	padding-top: 11px;
+	padding-left: 8px;
+	font-size: 15px;
+	-webkit-user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	text-rendering: optimizeLegibility;
+}
+
 #refreshButton {
 	position: absolute;
 	z-index: 1001;
@@ -145,23 +169,6 @@ header {
 	font-size: 17px;
 }
 
-#suggestBox {
-	background-color: white;
-	
-	-webkit-box-flex: 1;
-	box-flex: 1;
-	-webkit-box-sizing: border-box;
-	box-sizing: border-box;
-	-webkit-border-top-left-radius: 8px;
-	-webkit-border-top-right-radius: 8px;
-	-webkit-border-bottom-left-radius: 8px;
-	-webkit-border-bottom-right-radius: 8px;
-	border: 1px solid rgb(76, 86, 108);
-	font-size: 18px;
-	line-height: 45px;
-	margin: 10px;
-}
-
 #imgApp {
 	max-height: 160px;
 }
@@ -215,4 +222,20 @@ header {
 {
 	text-shadow: rgba(0, 0, 0, 0.6) 0px -1px 1px;
 	text-rendering: optimizeLegibility;
+}
+
+.apple-button-box {
+	background-color: white;
+	-webkit-box-flex: 1;
+	box-flex: 1;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-border-top-left-radius: 8px;
+	-webkit-border-top-right-radius: 8px;
+	-webkit-border-bottom-left-radius: 8px;
+	-webkit-border-bottom-right-radius: 8px;
+	border: 1px solid rgb(76, 86, 108);
+	font-size: 18px;
+	line-height: 45px;
+	margin: 10px;
 }
