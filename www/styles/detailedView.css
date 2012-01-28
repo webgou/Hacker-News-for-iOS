@@ -7,100 +7,34 @@
 	font-family: Georgia;
 	
 	text-decoration: none;
-	text-overflow: ellipsis;
+	/*text-overflow: ellipsis;
 	overflow: hidden;
 	white-space: nowrap;
-	-webkit-user-select: none;
+	-webkit-user-select: none;*/
 	-webkit-tap-highlight-color: transparent;
 	text-rendering: optimizeLegibility;
 }
 
-#detailedBookName {
+#detailedTitle {
 	color: #222;
-	font-size: 21px;
-	line-height: 25px;
+	font-size: 18px;
+	line-height: 22px;
 	font-weight: bold;
+	text-align: center;
+	padding-right: 15px;
 }
 
-#detailedBookAuthor {
+#detailedAuthor {
 	color: #262626;
 	font-height: 15px;
 	line-height: 19px;
 	padding-left: 2px;
 }
 
-#detailedPercentage {
-	height: 32px;
-	width: 287px;
+#detailedVotes img {
 	
-	border: 1px solid #42402d;
-	background-color: rgb(242, 242, 242);
-	position: relative;
+}
+
+#detailedComments img {
 	
-	-webkit-border-top-left-radius: 5px;
-	-webkit-border-top-right-radius: 5px;
-	-webkit-border-bottom-left-radius: 5px;
-	-webkit-border-bottom-right-radius: 5px;
-}
-
-#percDisplay {
-	position: absolute;
-	top: 0px;
-	left: 0px;
-	z-index: 200;
-	background-color: rgb(136, 153, 170);
-	width: 70%;
-	height: 32px;
-	-webkit-border-top-left-radius: 4px;
-	-webkit-border-bottom-left-radius: 4px;
-}
-
-#percLabel {
-	position: absolute;
-	top: 0px;
-	left: 0px;
-	z-index: 202;
-	height: 32px;
-	width: 100%;
-	color: #222;
-	text-align: center;
-	font-family: Georgia;
-	line-height: 32px;
-	font-size: 19px;
-	background-color: transparent;
-}
-
-#detailedPagesRead {
-	width: 287px;
-	font-height: 14px;
-	line-height: 19px;
-	text-align: center;
-	font-weight: bold;
-}
-
-#detailedNotes {
-	position: absolute;
-	height: 185px;
-	width: 268px;
-
-	font-family: "Marker felt";
-	font-size: 15px;
-	color: #000;
-	text-rendering: optimizeLegibility;
-
-	border: 5px solid #fff953;
-	-webkit-border-radius: 3px;
-	outline: none;
-	padding-left: 5px;
-	padding-right: 5px;
-	background-image: url("../images/Notepad.png");
-	background-size: 20px 20px;
-	background-repeat: repeat;
-	outline: none;
-	line-height: 20px;
-	-webkit-box-shadow: 1px 1px 3px 1px #000;
-}
-
-.noteInput::-webkit-input-placeholder {
-	color: #000;
 }

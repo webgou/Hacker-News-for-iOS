@@ -43,7 +43,6 @@ function showSectionWithId(sectionId) {
 	//var section = document.getElementById(sectionId);
 	//section.setAttribute('class', 'selected');
 	fadeInFromOpaque("#" + sectionId);
-	//fadeIn("#" + sectionId);
 }
 
 function showLoading() {
@@ -56,7 +55,7 @@ function showLoading() {
 		} else {
 			wait.innerHTML += ".";
 		}
-	}, 100);
+	}, 250);
 }
 
 function hideLoading() {
