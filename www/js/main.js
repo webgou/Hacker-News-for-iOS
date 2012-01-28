@@ -41,6 +41,9 @@ function detailNews(id) {
 		function(data) {
 			$("#detailedTitle").text(data.title);
 			$("#detailedAuthor").text("posted by " + data.postedBy + " " + data.postedAgo);
+			$("#detailedVotes").html("<img src='images/heart.png' /> " + data.points);
+			$("#detailedComments").html("<img src='images/chat.png' /> " + data.commentCount);
+
 			hideLoading();
 			switchToSectionWithId('detailView');
 		});

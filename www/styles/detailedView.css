@@ -1,6 +1,7 @@
 #detailViewScroller {
 	padding-top: 10px;
 	padding-left: 15px;
+	padding-right: 15px;
 }
 
 #detailViewScroller div {
@@ -21,7 +22,6 @@
 	line-height: 22px;
 	font-weight: bold;
 	text-align: center;
-	padding-right: 15px;
 }
 
 #detailedAuthor {
@@ -31,10 +31,24 @@
 	padding-left: 2px;
 }
 
+#detailVC {
+	color: #262626;
+	font-height: 14px;
+	line-height: 18px;
+	width: 100%;
+	text-align: center;
+}
+
 #detailedVotes img {
-	
+	line-height: 18px;
+	max-height: 14px;
+}
+
+#spacerVC {
+	color: rgb(242, 242, 242);
 }
 
 #detailedComments img {
-	
+	line-height: 18px;
+	max-height: 14px;
 }
