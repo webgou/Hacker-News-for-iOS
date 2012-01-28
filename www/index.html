@@ -15,7 +15,6 @@
 		<link rel="stylesheet" href="libs/reset.css" type="text/css" charset="utf-8" />
 		<link rel="stylesheet" href="styles/list.css" type="text/css" charset="utf-8" />
 		<link rel="stylesheet" href="styles/iphone.css" type="text/css" charset="utf-8" />
-		<link rel="stylesheet" href="styles/newbook.css" type="text/css" charset="utf-8" />
 		<link rel="stylesheet" href="styles/detailedView.css" type="text/css" charset="utf-8">
 		<!-- /CSS Styles -->
 
@@ -26,10 +25,7 @@
 		
 		<!-- jQuery Stuff -->
 		<script src="libs/jquery.js" type="text/javascript" charset="utf-8"></script>
-		<script src="libs/jquery.json-2.2.min.js" type="text/javascript" charset="utf-8"></script>
-		<script src="libs/jstorage.js" type="text/javascript" charset="utf-8"></script>
 		<script src="libs/iscroll/iscroll.js" type="text/javascript" charset="utf-8"></script>
-		<script src="libs/PlotKit/SweetCanvas.js" type="text/javascript" charset="utf-8"></script>
 		<!-- /jQuery Stuff -->
 
 		<script src="js/variables.js" type="text/javascript" charset="utf-8"></script>
@@ -39,10 +35,7 @@
 	</head>
 	<body onLoad="loaded()">
 		<header id="head" class="inner_text_shadow">
-			<span id="backButton" onClick="goBack()" class="hidden"><p>Back</p></span>
-			Markers
-			<span id="addBook" onClick="addNewBook()"><p>Add</p></span>
-			<span id="editBook" onClick="editNewBook()" class="hidden"><p>Edit</p></span>
+			Hacker News
 		</header>
 
 		<section id="Home">
@@ -50,20 +43,6 @@
 				<ul id="bookList">
 					
 				</ul>
-			</div>
-		</section>
-		
-		<section id="addNewBook">
-			<div id="addBookScroller">
-				<ul id="bookNameField">
-					<li><span class="inputLabel">Title</span> <input type="text" name="title" id="inputTitle" class="inputBox" /></li>
-					<li><span class="inputLabel">Author</span> <input type="text" name="author" id="inputAuthor" class="inputBox" /></li>
-					<li><span class="inputLabel">Number of Pages</span> <input type="number" name="pages" id="inputPages" class="inputBox" /></li>
-					<li><span class="inputLabel">Pages Read</span> <input type="number" name="read" id="inputRead" class="inputBox" /></li>
-				</ul>
-				<br />
-				
-				<!--<center><input type="submit" value="Save" name="save" id="btSave" onClick="newSaveClicked()" /></center>-->
 			</div>
 		</section>
 		
