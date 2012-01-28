@@ -1,0 +1,80 @@
+#bookNameField {
+	list-style-type: none;
+	padding-left: 5px;
+	padding-right: 5px;
+	height: 100%;
+	width: 290px;
+	margin: 10px;
+	margin-top: 15px;
+	-webkit-user-select: none;
+	-webkit-tap-highlight-color: transparent;
+}
+
+#bookNameField li {
+	height: 20px;
+	line-height: 20px;
+    background-color: #fff;
+    border: 1px solid #636464;
+    color: #222;
+    display: block;
+    margin-bottom: -1px;
+    padding: 12px 10px;
+    text-decoration: none;
+	text-overflow: ellipsis;
+	-webkit-user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	text-rendering: optimizeLegibility;
+}
+
+#bookNameField li:first-child {
+    -webkit-border-top-left-radius: 8px;
+    -webkit-border-top-right-radius: 8px;
+}
+
+#bookNameField li:last-child {
+    -webkit-border-bottom-left-radius: 8px;
+    -webkit-border-bottom-right-radius: 8px;
+}
+
+.inputLabel {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#inputTitle {
+	width: 211px;
+}
+
+#inputAuthor {
+	width: 193px;
+}
+
+#inputPages {
+	width: 116px;
+}
+
+#inputISBN {
+	width: 206px;
+}
+
+#inputRead {
+	width: 157px;
+}
+
+.inputBox {
+	outline: none;
+	background-color: transparent;
+	border: 0px solid;
+	
+	margin-top: -6px;
+	height: 25px;
+	
+	font-size: 15px;
+}
+
+#btSave {
+	height: 30px;
+	width: 100px;
+	font-size: 20px;
+	font-family: Georgia;
+}

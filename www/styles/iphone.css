@@ -1,0 +1,262 @@
+body {
+	font-family: "Helvetica";
+	-webkit-user-select: none;
+	-webkit-text-size-adjust: none;
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+	background-color: rgb(242, 242, 242);
+	text-rendering: optimizeLegibility;
+}
+
+body, ul, li {
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+
+a {
+	color: #0066CC;
+	text-rendering: optimizeLegibility;
+}
+
+section {
+	overflow: hidden;
+	text-rendering: optimizeLegibility;
+}
+
+/*
+	Header
+*/
+
+header {
+	width: 100%;
+	height: 44px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+	
+	background: -webkit-linear-gradient(
+		top,
+		#f78142 0%,
+		#ed601a 50%,
+		#e84d00 51%,
+		#f76618 100%
+	);
+	border-bottom: 1px solid #000;
+
+	font-family: Chunk, Helvetica;
+	
+	-webkit-box-sizing: border-box;
+	
+	text-align: center;
+	color: #ffffff;
+	padding-top: 10px;
+	
+	font-weight: bold;
+	font-size: 1.5em;
+	text-rendering: optimizeLegibility;
+}
+
+#backButton {
+	position: absolute;
+	z-index: 1001;
+	top: 3px;
+	left: 5px;
+	height: 44px;
+	width: 64px;
+	text-align: center;
+	background-image: url("../images/backButton.png");
+	background-size: 64px 37px;
+	background-repeat: no-repeat;
+	-webkit-user-select: none;
+	-webkit-tap-highlight-color: transparent;
+}
+
+#backButton p {
+	padding-top: 11px;
+	padding-left: 8px;
+	font-size: 15px;
+	-webkit-user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	text-rendering: optimizeLegibility;
+}
+
+#backButton:active, #backButton:hover {
+    background-image: url("../images/backButton-pressed.png");
+	background-size: 64px 37px;
+	-webkit-user-select: none;
+	-webkit-tap-highlight-color: transparent;
+}
+
+#addBook {
+	position: absolute;
+	z-index: 1001;
+	top: 3px;
+	right: 5px;
+	height: 44px;
+	width: 64px;
+	text-align: center;
+	background-image: url("../images/button.png");
+	background-size: 64px 37px;
+	background-repeat: no-repeat;
+	-webkit-user-select: none;
+	-webkit-tap-highlight-color: transparent;
+}
+
+#addBook p {
+	padding-top: 11px;
+	font-size: 15px;
+	-webkit-user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	text-rendering: optimizeLegibility;
+}
+
+#editBook {
+	position: absolute;
+	z-index: 1002;
+	top: 3px;
+	right: 5px;
+	height: 44px;
+	width: 64px;
+	text-align: center;
+	background-image: url("../images/button.png");
+	background-size: 64px 37px;
+	background-repeat: no-repeat;
+	-webkit-user-select: none;
+	-webkit-tap-highlight-color: transparent;
+}
+
+#editBook p {
+	padding-top: 11px;
+	font-size: 15px;
+	-webkit-user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	text-rendering: optimizeLegibility;
+}
+
+.inner_text_shadow
+{
+	text-shadow: rgba(0, 0, 0, 0.6) 0px -1px 1px;
+	text-rendering: optimizeLegibility;
+}
+
+#Home {
+	position: absolute;
+	top: 44px;
+	left: 0;
+	width: 100%;
+	height: 367px;
+}
+
+#addNewBook {
+	position: absolute;
+	top: 44px;
+	left: 0;
+	width: 100%;
+	height: 367px;
+}
+
+#detailView {
+	position: absolute;
+	top: 44px;
+	left: 0;
+	width: 100%;
+	height: 367px;
+}
+
+#About {
+	position: absolute;
+	top: 44px;
+	left: 0;
+	width: 100%;
+	height: 367px;
+}
+
+#Stats {
+	position: absolute;
+	top: 44px;
+	left: 0;
+	width: 100%;
+	height: 367px;
+	background-color: rgb(242, 242, 242);
+}
+
+#aboutBox {
+	margin: 10px;
+	padding: 15px;
+	
+	background-color: white;
+	
+	-webkit-box-flex: 1;
+	box-flex: 1;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-border-top-left-radius: 8px;
+	-webkit-border-top-right-radius: 8px;
+	-webkit-border-bottom-left-radius: 8px;
+	-webkit-border-bottom-right-radius: 8px;
+	border: 1px solid rgb(172, 172, 172);
+	font-size: 17px;
+}
+
+#suggestBox {
+	background-color: white;
+	
+	-webkit-box-flex: 1;
+	box-flex: 1;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-border-top-left-radius: 8px;
+	-webkit-border-top-right-radius: 8px;
+	-webkit-border-bottom-left-radius: 8px;
+	-webkit-border-bottom-right-radius: 8px;
+	border: 1px solid rgb(76, 86, 108);
+	font-size: 18px;
+	line-height: 45px;
+	margin: 10px;
+}
+
+#imgApp {
+	max-height: 160px;
+}
+
+#devBy span {
+	text-align: justify;
+}
+
+.apple-text {
+	font-size: 14px;
+	color: #636464;
+	padding-left: 10px;
+	font-weight: bold;
+	text-shadow: rgb(255, 255, 255) 0px 1px 0px;
+}
+
+.hidden {
+	overflow: hidden;
+	display: none;
+}
+
+.chevron {
+	position: absolute;
+	width: 8px;
+	height: 13px;
+	right: 10px;
+	top: 15px;
+	background-image: url(../images/chevron.png);
+	background-repeat: no-repeat no-repeat;
+}
+
+.rightButton {
+	position: absolute;
+	top: 7px;
+	right: 6px;
+	height: 30px;
+	font-weight: bold;
+	text-align: center;
+	color: white;
+	line-height: 28px;
+	border-width: 0 8px 0 8px;
+}

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Markers</title>
+		<meta name="generator" content="TextMate http://macromates.com/">
+		<meta name="author" content="Nathan Campos">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<!-- Date: 2011-07-04 -->
+
+		<!-- CSS Styles -->
+		<link rel="stylesheet" href="libs/reset.css" type="text/css" charset="utf-8" />
+		<link rel="stylesheet" href="styles/list.css" type="text/css" charset="utf-8" />
+		<link rel="stylesheet" href="styles/iphone.css" type="text/css" charset="utf-8" />
+		<link rel="stylesheet" href="styles/newbook.css" type="text/css" charset="utf-8" />
+		<link rel="stylesheet" href="styles/detailedView.css" type="text/css" charset="utf-8">
+		<!-- /CSS Styles -->
+
+		<!-- PhoneGap Stuff -->
+		<script src="phonegap-1.0.0.js" type="text/javascript" charset="utf-8"></script>
+		<script src="NativeControls.js" type="text/javascript" charset="utf-8"></script>
+		<!-- /PhoneGap Stuff -->
+		
+		<!-- jQuery Stuff -->
+		<script src="libs/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="libs/jquery.json-2.2.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="libs/jstorage.js" type="text/javascript" charset="utf-8"></script>
+		<script src="libs/iscroll/iscroll.js" type="text/javascript" charset="utf-8"></script>
+		<script src="libs/PlotKit/SweetCanvas.js" type="text/javascript" charset="utf-8"></script>
+		<!-- /jQuery Stuff -->
+
+		<script src="js/variables.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/styling.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/settings.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/main.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body onLoad="loaded()">
+		<header id="head" class="inner_text_shadow">
+			<span id="backButton" onClick="goBack()" class="hidden"><p>Back</p></span>
+			Markers
+			<span id="addBook" onClick="addNewBook()"><p>Add</p></span>
+			<span id="editBook" onClick="editNewBook()" class="hidden"><p>Edit</p></span>
+		</header>
+
+		<section id="Home">
+			<div id="bookScroller">
+				<ul id="bookList">
+					
+				</ul>
+			</div>
+		</section>
+		
+		<section id="addNewBook">
+			<div id="addBookScroller">
+				<ul id="bookNameField">
+					<li><span class="inputLabel">Title</span> <input type="text" name="title" id="inputTitle" class="inputBox" /></li>
+					<li><span class="inputLabel">Author</span> <input type="text" name="author" id="inputAuthor" class="inputBox" /></li>
+					<li><span class="inputLabel">Number of Pages</span> <input type="number" name="pages" id="inputPages" class="inputBox" /></li>
+					<li><span class="inputLabel">Pages Read</span> <input type="number" name="read" id="inputRead" class="inputBox" /></li>
+				</ul>
+				<br />
+				
+				<!--<center><input type="submit" value="Save" name="save" id="btSave" onClick="newSaveClicked()" /></center>-->
+			</div>
+		</section>
+		
+		<section id="detailView">
+			<div id="detailViewScroller">
+				<div id="detailedBookName"></div>
+				<div id="detailedBookAuthor"></div>
+				
+				<br />
+				
+				<div id="detailedPercentage" class="hidden">
+					<div id="percDisplay"></div>
+					<div id="percLabel"></div>
+				</div>
+				
+				<br />
+				
+				<div id="detailedPagesRead"></div>
+				
+				<br />
+				
+				<textarea name="notes" class="noteInput" id="detailedNotes" placeholder="Use two fingers to scroll the text" onBlur="onNoteBlur()"></textarea>
+			</div>
+		</section>
+		
+		<section id="Stats">
+			<div id="statsScroller">
+				<ul id="finishedList">
+					
+				</ul>
+			</div>
+		</section>
+		
+		<section id="About">
+			<div id="aboutScroller">
+				<br /><br /><br />
+				<center>
+					<h3 class="apple-text">Markers</h3>
+					<h4 class="apple-text">v1.0</h4>
+				</center>
+				
+				<div id="metricsSpacer"></div>
+
+				<div id="aboutBox">
+					<div id="devBy">
+						<span>
+							Keep track of your reading habits
+						</span>
+					</div>
+				</div>
+				
+				<br />
+				<center class="apple-text">
+					Developed by:<br />
+					<b>Nathan Campos</b><br /><br />
+					
+					Graphics by:<br />
+					<b>Cameron Filiau</b>
+				</center>
+				
+				<br />
+				<div id="suggestBox" onClick="location.href = 'mailto:eeepc904@gmail.com?subject=Markers Feature Suggestion: ';">
+					<center class="apple-text">
+						<b>Suggest Features</b>
+					</center>
+				</div>
+				<br />
+			</div>
+		</section>
+	</body>
+</html>

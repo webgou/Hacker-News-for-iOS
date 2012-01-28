@@ -1,0 +1,121 @@
+/* Book list style */
+
+ul {
+	font-family: Georgia;
+	list-style-type: none;
+	height: 100%;
+	width: 100%;
+	-webkit-user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	text-rendering: optimizeLegibility;
+	background-color: rgb(242, 242, 242);
+	z-index: 1001;
+}
+
+ul li a {
+	font-family: Georgia;
+	background-color: rgb(242, 242, 242);
+	border-bottom: 1px solid rgb(217, 217, 217);
+	color: #222;
+	height: 35px;
+	display: block;
+	font-size: 17px;
+	font-weight: bold;
+	margin-bottom: -1px;
+	padding: 10px 10px;
+	text-decoration: none;
+	text-overflow: ellipsis;
+	-webkit-user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	text-rendering: optimizeLegibility;
+}
+
+ul li a:active, ul li a:hover {
+	background-color: rgb(136, 153, 170);
+	color: white;
+}
+
+.clicked {
+	background-color: rgb(136, 153, 170);
+	color: white;
+}
+
+ul li {
+	border-bottom: 1px solid #636464;
+}
+
+.liBookName {
+	position: absolute;
+	margin-top: -3px;
+	width: 240px;
+	height: 20px;
+	
+	color: #222;
+	font-size: 17px;
+	line-height: 20px;
+	font-weight: bold;
+	text-decoration: none;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	-webkit-user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	text-rendering: optimizeLegibility;
+}
+
+.liBookAuthor {
+	position: absolute;
+	padding-top: 22px;
+	left: 11px;
+	height: 17px;
+	width: 240px;
+	
+	color: #222;
+	font-size: 12px;
+	line-height: 17px;
+	font-weight: normal;
+	text-decoration: none;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	-webkit-user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	text-rendering: optimizeLegibility;
+}
+
+.liPagesRead {
+	position: absolute;
+	margin-top: -5px;
+	right: 11px;
+	
+	color: #222;
+	font-size: 12px;
+	text-align: center;
+	font-weight: bold;
+	text-decoration: none;
+	-webkit-user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	text-rendering: optimizeLegibility;
+}
+
+.pRead {
+	font-size: 10px;
+	font-weight: normal;
+}
+
+.liPercentage {
+	position: absolute;
+	padding-top: 23px;
+	right: 11px;
+	width: 45px;
+	
+	
+	color: #222;
+	font-size: 12px;
+	text-align: center;
+	font-weight: bold;
+	text-decoration: none;
+	-webkit-user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	text-rendering: optimizeLegibility;
+}

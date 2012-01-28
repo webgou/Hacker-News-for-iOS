@@ -20,6 +20,8 @@
 	<array/>
 	<key>Plugins</key>
 	<dict>
+		<key>NativeControls</key>
+		<string>NativeControls</string>
 		<key>com.phonegap.accelerometer</key>
 		<string>PGAccelerometer</string>
 		<key>com.phonegap.camera</key>
