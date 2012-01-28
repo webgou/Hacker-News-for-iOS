@@ -31,12 +31,12 @@ ul li a {
 }
 
 ul li a:active, ul li a:hover {
-	background-color: rgb(136, 153, 170);
+	background-color: #F47333;
 	color: white;
 }
 
 .clicked {
-	background-color: rgb(136, 153, 170);
+	background-color: #F47333;
 	color: white;
 }
 
@@ -44,7 +44,7 @@ ul li {
 	border-bottom: 1px solid #636464;
 }
 
-.liBookName {
+.liName {
 	position: absolute;
 	margin-top: -3px;
 	width: 240px;
@@ -63,7 +63,7 @@ ul li {
 	text-rendering: optimizeLegibility;
 }
 
-.liBookAuthor {
+.liAuthor {
 	position: absolute;
 	padding-top: 22px;
 	left: 11px;
@@ -83,7 +83,7 @@ ul li {
 	text-rendering: optimizeLegibility;
 }
 
-.liPagesRead {
+.liVotes {
 	position: absolute;
 	margin-top: -5px;
 	right: 11px;
@@ -103,7 +103,7 @@ ul li {
 	font-weight: normal;
 }
 
-.liPercentage {
+.liComments {
 	position: absolute;
 	padding-top: 23px;
 	right: 11px;
