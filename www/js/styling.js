@@ -46,13 +46,19 @@ function showSectionWithId(sectionId) {
 	//fadeIn("#" + sectionId);
 }
 
-function clickedTimeout() {
-	$("#btCalc").attr("src", "images/calc_bt.png");
-	clearTimeout(btTimer);
-	calcDist();
+function showLoading() {
+	waitLoading = setInterval(function() {
+		var wait = document.getElementById("wait");
+
+		if (wait.innerHTML.length > 3) {
+			wait.innerHTML = "";
+		} else {
+			wait.innerHTML += ".";
+		}
+	}, 100);
 }
 
-function btCalcClicked() {
-	$("#btCalc").attr("src", "images/calc_bt_clicked.png"); // Clicked
-	btTimer = setTimeout("clickedTimeout()", 100);
+function hideLoading() {
+	clearInterval(waitLoading);
+	fadeOut("#loading");
 }

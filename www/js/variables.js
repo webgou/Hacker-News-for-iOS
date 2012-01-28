@@ -3,3 +3,4 @@
 
 var nativeControls;
 var scrollHome = null;
+var waitLoading;

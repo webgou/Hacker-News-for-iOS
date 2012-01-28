@@ -149,6 +149,12 @@ header {
 	text-align: justify;
 }
 
+#loading {
+	width: 100%;
+	padding-top: 65%;
+	text-align: center;
+}
+
 .apple-text {
 	font-size: 14px;
 	color: #636464;

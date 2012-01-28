@@ -3,6 +3,7 @@
 
 function loaded() {
 	document.addEventListener("deviceready", onDeviceReady, false);
+	document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
 	scrollHome = new iScroll('Home', { vScrollbar: true, hideScrollbar: true, fadeScrollbar: true });
 }
 
@@ -82,9 +83,10 @@ function onDeviceReady() {
 	nativeControls.showTabBar();
 	nativeControls.showTabBarItems("home", "new", "submitted", "settings", "about");
 
-	document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
 	switchToSectionWithId('Home');
 	nativeControls.selectTabBarItem("home");
+
+	showLoading();
 	loadTopNews();
 }
 
@@ -93,9 +95,10 @@ function loadTopNews() {
 		{ format: "json" },
 		function(data) {
 			$.each(data.items, function(i, item) {
-				$("#homeList").prepend("<li id='" + item.id + "'><a href='#" + item.id + "' onClick='showDetails(\"" + item.id + "\")' id='firstRow'><span class='liName'>" + item.title + "</span><span class='liAuthor'>" + item.postedBy + "</span><span class='liVotes'>" + item.points + "<br /><span class='pRead'>vts/comm</span></span><span class='liComments'>" + item.commentCount + "</span></a></li>");
+				$("#homeList").append("<li id='" + item.id + "'><a href='#" + item.id + "' onClick='showDetails(\"" + item.id + "\")' id='firstRow'><span class='liName'>" + item.title + "</span><span class='liAuthor'>" + item.postedBy + "</span><span class='liVotes'>" + item.points + "<br /><span class='pRead'>vts/comm</span></span><span class='liComments'>" + item.commentCount + "</span></a></li>");
 			});
 			setTimeout(function () {
+				hideLoading();
 				scrollHome.refresh();
 			}, 0);
 		});
