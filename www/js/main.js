@@ -94,6 +94,15 @@ function loadSubmitted() {
 		});
 }
 
+/*
+**
+   TODO: Implement a profile view
+**
+function showUserProfile(userID) {
+	
+}
+*/
+
 function detailNews(id, view, stack) {
 	stackState = stack;
 	var url = "http://api.ihackernews.com/post/" + id;
@@ -125,6 +134,14 @@ function detailNews(id, view, stack) {
 			}, 0);
 			switchToSectionWithId('detailView');
 		});
+}
+
+function loadComments(id) {
+	var url = "http://api.ihackernews.com/post/" + id;
+	fadeOut("#detailView");
+	fadeIn("#backButton");
+	fadeOut("#refreshButton");
+	showLoading();
 }
 
 function goBack() {

@@ -83,12 +83,12 @@ function loadTabBar() {
 		"Submitted",
 		"/www/tabs/submitted.png",
 		{"onSelect": function() {
-			currentList = "submitted";
-
-			fadeIn("#refreshButton");
-			fadeOut("#backButton");
-
 			if (localStorage.getItem("user") != "null") {
+				currentList = "submitted";
+
+				fadeIn("#refreshButton");
+				fadeOut("#backButton");
+
 				if (submittedAlreadyLoaded == false) {
 					switchToSectionWithId('Submitted');
 					showLoading();
