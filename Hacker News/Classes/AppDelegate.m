@@ -30,8 +30,7 @@
  */
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-	
-	NSArray *keyArray = [launchOptions allKeys];
+    NSArray *keyArray = [launchOptions allKeys];
 	if ([launchOptions objectForKey:[keyArray objectAtIndex:0]]!=nil) 
 	{
 		NSURL *url = [launchOptions objectForKey:[keyArray objectAtIndex:0]];
@@ -40,6 +39,7 @@
 	}
 	
 	return [super application:application didFinishLaunchingWithOptions:launchOptions];
+    
 }
 
 // this happens while we are running ( in the background, or from within our own app )

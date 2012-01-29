@@ -7,7 +7,9 @@ function refreshList(list) {
 		showLoading();
 		loadTopNews();
 	} else if (list == "new") {
-		// New HN here
+		$(".newListItem").remove();
+		showLoading();
+		loadNewNews();
 	} else if (list == "submitted") {
 		// do submitted here
 	}

@@ -35,6 +35,7 @@
 		D88E3FC714D348A400837C07 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D88E3FC614D348A400837C07 /* Default@2x.png */; };
 		D88E3FC914D3490100837C07 /* www in Resources */ = {isa = PBXBuildFile; fileRef = D88E3FC814D3490100837C07 /* www */; };
 		D88E3FCC14D349B300837C07 /* NativeControls.m in Sources */ = {isa = PBXBuildFile; fileRef = D88E3FCB14D349B300837C07 /* NativeControls.m */; };
+		D88E3FCF14D4D4FF00837C07 /* Prompt.m in Sources */ = {isa = PBXBuildFile; fileRef = D88E3FCE14D4D4FF00837C07 /* Prompt.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,8 @@
 		D88E3FC814D3490100837C07 /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; path = www; sourceTree = "<group>"; };
 		D88E3FCA14D349B300837C07 /* NativeControls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NativeControls.h; sourceTree = "<group>"; };
 		D88E3FCB14D349B300837C07 /* NativeControls.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NativeControls.m; sourceTree = "<group>"; };
+		D88E3FCD14D4D4FF00837C07 /* Prompt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prompt.h; sourceTree = "<group>"; };
+		D88E3FCE14D4D4FF00837C07 /* Prompt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Prompt.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,11 +167,11 @@
 		D88E3F9014D347BB00837C07 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D88E3FB114D347BB00837C07 /* PhoneGap.plist */,
 				D88E3F9114D347BB00837C07 /* Hacker News-Info.plist */,
 				D88E3F9214D347BB00837C07 /* InfoPlist.strings */,
 				D88E3F9514D347BB00837C07 /* main.m */,
 				D88E3F9714D347BB00837C07 /* Hacker News-Prefix.pch */,
-				D88E3FB114D347BB00837C07 /* PhoneGap.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -211,6 +214,8 @@
 		D88E3FB714D347BB00837C07 /* Plugins */ = {
 			isa = PBXGroup;
 			children = (
+				D88E3FCD14D4D4FF00837C07 /* Prompt.h */,
+				D88E3FCE14D4D4FF00837C07 /* Prompt.m */,
 				D88E3FCA14D349B300837C07 /* NativeControls.h */,
 				D88E3FCB14D349B300837C07 /* NativeControls.m */,
 				D88E3FB814D347BB00837C07 /* README */,
@@ -313,6 +318,7 @@
 				D88E3F9614D347BB00837C07 /* main.m in Sources */,
 				D88E3FB614D347BB00837C07 /* AppDelegate.m in Sources */,
 				D88E3FCC14D349B300837C07 /* NativeControls.m in Sources */,
+				D88E3FCF14D4D4FF00837C07 /* Prompt.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

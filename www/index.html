@@ -38,7 +38,7 @@
 		<header id="head" class="inner_text_shadow">
 			<span id="backButton" onClick="goBack()" class="hidden"><p>Back</p></span>
 			Hacker News
-			<span id="refreshButton" onClick="refreshList('home')"><p><img src="images/retweet.png" /></p></span>
+			<span id="refreshButton" onClick="refreshList(currentList)"><p><img src="images/retweet.png" /></p></span>
 		</header>
 
 		<div id="loading" class="apple-text">
@@ -48,6 +48,14 @@
 		<section id="Home">
 			<div id="homeScroller">
 				<ul id="homeList">
+					
+				</ul>
+			</div>
+		</section>
+		
+		<section id="New">
+			<div id="newScroller">
+				<ul id="newList">
 					
 				</ul>
 			</div>
@@ -83,17 +91,9 @@
 			</div>
 		</section>
 		
-		<section id="Stats">
-			<div id="statsScroller">
-				<ul id="finishedList">
-					
-				</ul>
-			</div>
-		</section>
-		
-		<section id="About">
-			<div id="aboutScroller">
-				<br /><br /><br />
+		<section id="Settings">
+			<div id="settingScroller">
+				<br /><br />
 				<center>
 					<h3 class="apple-text">Hacker News</h3>
 					<h4 class="apple-text">v1.0</h4>
@@ -102,11 +102,9 @@
 				<div id="metricsSpacer"></div>
 
 				<div id="aboutBox">
-					<div id="devBy">
-						<span>
-							Hacker News client for iOS
-						</span>
-					</div>
+					<center class="apple-text">
+						<b>Hacker News client for iOS</b>
+					</center>
 				</div>
 				
 				<br />
@@ -115,13 +113,19 @@
 					<b>Nathan Campos</b>
 				</center>
 				
-				<br />
-				<div id="suggestBox" onClick="location.href = 'mailto:eeepc904@gmail.com?subject=Markers Feature Suggestion: ';" class="apple-button-box">
+				<br /><br />
+				<center id="loggedUser" class="apple-text"></center>
+				<div id="accountBox" onClick="saveAccount()" class="apple-button-box">
+					<center class="apple-text">
+						<b><span id="saveChange"></span> HN Account</b>
+					</center>
+				</div>
+
+				<div id="suggestBox" onClick="location.href = 'mailto:eeepc904@gmail.com?subject=Hacker News App Feature Suggestion: ';" class="apple-button-box">
 					<center class="apple-text">
 						<b>Suggest Features</b>
 					</center>
 				</div>
-				<br />
 			</div>
 		</section>
 	</body>

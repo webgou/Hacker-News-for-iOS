@@ -118,7 +118,7 @@ header {
 	height: 367px;
 }
 
-#addNewBook {
+#New {
 	position: absolute;
 	top: 44px;
 	left: 0;
@@ -142,7 +142,7 @@ header {
 	height: 367px;
 }
 
-#Stats {
+#Settings {
 	position: absolute;
 	top: 44px;
 	left: 0;
@@ -171,10 +171,6 @@ header {
 
 #imgApp {
 	max-height: 160px;
-}
-
-#devBy span {
-	text-align: justify;
 }
 
 #loading {

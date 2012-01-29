@@ -4,7 +4,10 @@
 function loaded() {
 	document.addEventListener("deviceready", onDeviceReady, false);
 	document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+	
+	// Load iScroll stuff
 	scrollHome = new iScroll('Home', { vScrollbar: true, hideScrollbar: true, fadeScrollbar: true });
+	scrollNew = new iScroll('New', { vScrollbar: true, hideScrollbar: true, fadeScrollbar: true });
 }
 
 function onDeviceReady() {
@@ -21,7 +24,7 @@ function loadTopNews() {
 		{ format: "json" },
 		function(data) {
 			$.each(data.items, function(i, item) {
-				$("#homeList").append("<li class='homeListItem' onClick='detailNews(\"" + item.id + "\")'><a href='#" + item.id + "' onClick='detailNews(\"" + item.id + "\")' id='firstRow'><span class='liName'>" + item.title + "</span><span class='liAuthor'>" + item.postedBy + "</span><span class='liVotes'>" + item.points + "<br /><span class='pRead'>vts/comm</span></span><span class='liComments'>" + item.commentCount + "</span></a></li>");
+				$("#homeList").append("<li class='homeListItem'><a href='#" + item.id + "' onClick='detailNews(\"" + item.id + "\", \"#Home\", \"detail\")' id='firstRow'><span class='liName'>" + item.title + "</span><span class='liAuthor'>" + item.postedBy + "</span><span class='liVotes'>" + item.points + "<br /><span class='pRead'>vts/comm</span></span><span class='liComments'>" + item.commentCount + "</span></a></li>");
 			});
 
 			setTimeout(function () {
@@ -31,13 +34,32 @@ function loadTopNews() {
 		});
 }
 
-function detailNews(id) {
+function loadNewNews() {
+	$.getJSON("http://api.ihackernews.com/new",
+		{ format: "json" },
+		function(data) {
+			$.each(data.items, function(i, item) {
+				$("#newList").append("<li class='newListItem'><a href='#" + item.id + "' onClick='detailNews(\"" + item.id + "\", \"#New\", \"detail_new\")' id='firstRow'><span class='liName'>" + item.title + "</span><span class='liAuthor'>" + item.postedBy + "</span><span class='liVotes'>" + item.points + "<br /><span class='pRead'>vts/comm</span></span><span class='liComments'>" + item.commentCount + "</span></a></li>");
+			});
+
+			newAlreadyLoaded = true;
+			currentList = "new";
+			switchToSectionWithId('New');
+
+			setTimeout(function () {
+				hideLoading();
+				scrollNew.refresh();
+			}, 0);
+		});
+}
+
+function detailNews(id, view, stack) {
+	stackState = stack;
 	var url = "http://api.ihackernews.com/post/" + id;
-	fadeOut("#Home");
+	fadeOut(view);
 	fadeIn("#backButton");
 	fadeOut("#refreshButton");
 	showLoading();
-	stackState = "detail";
 	
 	$.getJSON(url,
 		{ format: "json" },
@@ -60,16 +82,38 @@ function goBack() {
 		setTimeout(function () {
 			scrollHome.refresh();
 		}, 0);
-	} else if (stackState == "comments") {
-		fadeIn("#addBook");
+	} else if (stackState == "detail_new") {
+		fadeIn("#refreshButton");
 		fadeOut("#backButton");
+		switchToSectionWithId('New');
+		setTimeout(function () {
+			scrollNew.refresh();
+		}, 0);
+	} else if (stackState == "comments") {
+		// Edit me please!!!!!!!!!!!!
+		fadeIn("#backButton");
 		switchToSectionWithId('Home');
 		setTimeout(function () {
 			scrollBooks.refresh();
 		}, 0);
 	} else {
-		fadeIn("#editBook");
-		bookEntryState = "show";
-		switchToSectionWithId('detailView');
+		alert("Nothing to do here...");
+		//fadeIn("#editBook");
+		//bookEntryState = "show";
+		//switchToSectionWithId('detailView');
 	}
+}
+
+function saveAccount() {
+	var user = prompt("Username");
+	localStorage.setItem("user", user);
+	/*window.plugins.Prompt.show(
+		"Username",
+		function (userText) {
+			localStorage.setItem("user", userText);
+		}, // Add callback
+		function () { }, // Cancel callback 
+		"Save",
+		"Cancel"
+	);*/
 }

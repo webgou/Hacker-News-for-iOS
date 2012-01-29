@@ -12,7 +12,10 @@ function loadTabBar() {
 		"Home",
 		"/www/tabs/home.png",
 		{"onSelect": function() {
+			fadeIn("#refreshButton");
+			fadeOut("#backButton");
 			switchToSectionWithId('Home');
+			currentList("home");
 			setTimeout(function () {
 				scrollHome.refresh();
 			}, 0);
@@ -25,10 +28,35 @@ function loadTabBar() {
 		"New",
 		"/www/tabs/info.png",
 		{"onSelect": function() {
-			loadFinished();
-			switchToSectionWithId('New');
+			currentList = "new";
+
+			fadeIn("#refreshButton");
+			fadeOut("#backButton");
+
+			if (newAlreadyLoaded == false) {
+				switchToSectionWithId('New');
+				showLoading();
+				loadNewNews();
+			} else {
+				switchToSectionWithId('New');
+				setTimeout(function () {
+					scrollNew.refresh();
+				}, 0);
+			}
+		}}
+	);
+	
+	// Ask tab
+	nativeControls.createTabBarItem(
+		"ask",
+		"Ask",
+		"/www/tabs/group.png",
+		{"onSelect": function() {
+			fadeOut("#refreshButton");
+			fadeOut("#backButton");
+			switchToSectionWithId('Ask');
 			setTimeout(function () {
-				scrollStats.refresh();
+				scrollAsk.refresh();
 			}, 0);
 		}}
 	);
@@ -39,6 +67,8 @@ function loadTabBar() {
 		"Submitted",
 		"/www/tabs/submitted.png",
 		{"onSelect": function() {
+			fadeIn("#refreshButton");
+			fadeOut("#backButton");
 			loadFinished();
 			switchToSectionWithId('Submitted');
 			setTimeout(function () {
@@ -47,26 +77,24 @@ function loadTabBar() {
 		}}
 	);
 	
-	// About tab
+	// Settings tab
 	nativeControls.createTabBarItem(
 		"settings",
 		"Settings",
 		"/www/tabs/gear.png",
 		{"onSelect": function() {
+			fadeOut("#refreshButton");
+			fadeOut("#backButton");
+
+			if (localStorage.getItem("user") == "null") {
+				$("#loggedUser").html("<b>You're not logged in</b>");
+				$("#saveChange").text("Save");
+			} else {
+				$("#loggedUser").html("<b>Logged in as " + localStorage.getItem("user") + "</b>");
+				$("#saveChange").text("Change");
+			}
+
 			switchToSectionWithId('Settings');
-			setTimeout(function () {
-				scrollAbout.refresh();
-			}, 0);
-		}}
-	);
-	
-	// About tab
-	nativeControls.createTabBarItem(
-		"about",
-		"About",
-		"/www/tabs/suitcase.png",
-		{"onSelect": function() {
-			switchToSectionWithId('About');
 			setTimeout(function () {
 				scrollAbout.refresh();
 			}, 0);
@@ -75,5 +103,5 @@ function loadTabBar() {
 	
 	// Compile the TabBar
 	nativeControls.showTabBar();
-	nativeControls.showTabBarItems("home", "new", "submitted", "settings", "about");
+	nativeControls.showTabBarItems("home", "new", "ask", "submitted", "settings");
 }
