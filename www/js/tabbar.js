@@ -52,12 +52,28 @@ function loadTabBar() {
 		"Ask",
 		"/www/tabs/group.png",
 		{"onSelect": function() {
-			fadeOut("#refreshButton");
+			currentList = "ask";
+
+			fadeIn("#refreshButton");
+			fadeOut("#backButton");
+
+			if (askAlreadyLoaded == false) {
+				switchToSectionWithId('Ask');
+				showLoading();
+				loadAskNews();
+			} else {
+				switchToSectionWithId('Ask');
+				setTimeout(function () {
+					scrollAsk.refresh();
+				}, 0);
+			}
+			
+			/*fadeOut("#refreshButton");
 			fadeOut("#backButton");
 			switchToSectionWithId('Ask');
 			setTimeout(function () {
 				scrollAsk.refresh();
-			}, 0);
+			}, 0);*/
 		}}
 	);
 	

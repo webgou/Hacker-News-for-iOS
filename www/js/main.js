@@ -8,6 +8,7 @@ function loaded() {
 	// Load iScroll stuff
 	scrollHome = new iScroll('Home', { vScrollbar: true, hideScrollbar: true, fadeScrollbar: true });
 	scrollNew = new iScroll('New', { vScrollbar: true, hideScrollbar: true, fadeScrollbar: true });
+	scrollAsk = new iScroll('Ask', { vScrollbar: true, hideScrollbar: true, fadeScrollbar: true });
 }
 
 function onDeviceReady() {
@@ -53,6 +54,25 @@ function loadNewNews() {
 		});
 }
 
+function loadAskNews() {
+	$.getJSON("http://api.ihackernews.com/ask",
+		{ format: "json" },
+		function(data) {
+			$.each(data.items, function(i, item) {
+				$("#askList").append("<li class='askListItem'><a href='#" + item.id + "' onClick='detailNews(\"" + item.id + "\", \"#New\", \"ask\")' id='firstRow'><span class='liName'>" + item.title + "</span><span class='liAuthor'>" + item.postedBy + "</span><span class='liVotes'>" + item.points + "<br /><span class='pRead'>vts/comm</span></span><span class='liComments'>" + item.commentCount + "</span></a></li>");
+			});
+
+			askAlreadyLoaded = true;
+			currentList = "ask";
+			switchToSectionWithId('Ask');
+
+			setTimeout(function () {
+				hideLoading();
+				scrollAsk.refresh();
+			}, 0);
+		});
+}
+
 function detailNews(id, view, stack) {
 	stackState = stack;
 	var url = "http://api.ihackernews.com/post/" + id;
@@ -88,6 +108,13 @@ function goBack() {
 		switchToSectionWithId('New');
 		setTimeout(function () {
 			scrollNew.refresh();
+		}, 0);
+	} else if (stackState == "detail_new") {
+		fadeIn("#refreshButton");
+		fadeOut("#backButton");
+		switchToSectionWithId('Ask');
+		setTimeout(function () {
+			scrollAsk.refresh();
 		}, 0);
 	} else if (stackState == "comments") {
 		// Edit me please!!!!!!!!!!!!

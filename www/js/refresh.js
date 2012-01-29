@@ -10,6 +10,10 @@ function refreshList(list) {
 		$(".newListItem").remove();
 		showLoading();
 		loadNewNews();
+	} else if (list == "ask") {
+		$(".askListItem").remove();
+		showLoading();
+		loadAskNews();
 	} else if (list == "submitted") {
 		// do submitted here
 	}
