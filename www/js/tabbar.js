@@ -88,15 +88,25 @@ function loadTabBar() {
 			fadeIn("#refreshButton");
 			fadeOut("#backButton");
 
-			if (submittedAlreadyLoaded == false) {
-				switchToSectionWithId('Submitted');
-				showLoading();
-				loadSubmitted();
+			if (localStorage.getItem("user") != "null") {
+				if (submittedAlreadyLoaded == false) {
+					switchToSectionWithId('Submitted');
+					showLoading();
+					loadSubmitted();
+				} else {
+					switchToSectionWithId('Submitted');
+					setTimeout(function () {
+						scrollSubmitted.refresh();
+					}, 0);
+				}
 			} else {
-				switchToSectionWithId('Submitted');
-				setTimeout(function () {
-					scrollSubmitted.refresh();
-				}, 0);
+				navigator.notification.alert(
+				    "Please go to Settings and set your username to get access to this feature",
+				    function() {
+						// Do nothing
+					},
+				    'Username Required'
+				);
 			}
 		}}
 	);
