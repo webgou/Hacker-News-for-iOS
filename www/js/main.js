@@ -9,6 +9,7 @@ function loaded() {
 	scrollHome = new iScroll('Home', { vScrollbar: true, hideScrollbar: true, fadeScrollbar: true });
 	scrollNew = new iScroll('New', { vScrollbar: true, hideScrollbar: true, fadeScrollbar: true });
 	scrollAsk = new iScroll('Ask', { vScrollbar: true, hideScrollbar: true, fadeScrollbar: true });
+	scrollDetail = new iScroll('detailView', { vScrollbar: true, hideScrollbar: true, fadeScrollbar: true });
 }
 
 function onDeviceReady() {
@@ -59,7 +60,26 @@ function loadAskNews() {
 		{ format: "json" },
 		function(data) {
 			$.each(data.items, function(i, item) {
-				$("#askList").append("<li class='askListItem'><a href='#" + item.id + "' onClick='detailNews(\"" + item.id + "\", \"#New\", \"ask\")' id='firstRow'><span class='liName'>" + item.title + "</span><span class='liAuthor'>" + item.postedBy + "</span><span class='liVotes'>" + item.points + "<br /><span class='pRead'>vts/comm</span></span><span class='liComments'>" + item.commentCount + "</span></a></li>");
+				$("#askList").append("<li class='askListItem'><a href='#" + item.id + "' onClick='detailNews(\"" + item.id + "\", \"#Ask\", \"ask\")' id='firstRow'><span class='liName'>" + item.title + "</span><span class='liAuthor'>" + item.postedBy + "</span><span class='liVotes'>" + item.points + "<br /><span class='pRead'>vts/comm</span></span><span class='liComments'>" + item.commentCount + "</span></a></li>");
+			});
+
+			askAlreadyLoaded = true;
+			currentList = "ask";
+			switchToSectionWithId('Ask');
+
+			setTimeout(function () {
+				hideLoading();
+				scrollAsk.refresh();
+			}, 0);
+		});
+}
+
+function loadSubmitted() {
+	$.getJSON("http://api.ihackernews.com/ask",
+		{ format: "json" },
+		function(data) {
+			$.each(data.items, function(i, item) {
+				$("#askList").append("<li class='askListItem'><a href='#" + item.id + "' onClick='detailNews(\"" + item.id + "\", \"#Ask\", \"ask\")' id='firstRow'><span class='liName'>" + item.title + "</span><span class='liAuthor'>" + item.postedBy + "</span><span class='liVotes'>" + item.points + "<br /><span class='pRead'>vts/comm</span></span><span class='liComments'>" + item.commentCount + "</span></a></li>");
 			});
 
 			askAlreadyLoaded = true;
@@ -88,8 +108,20 @@ function detailNews(id, view, stack) {
 			$("#detailedAuthor").text("posted by " + data.postedBy + " " + data.postedAgo);
 			$("#detailedVotes").html("<img src='images/heart.png' /> " + data.points);
 			$("#detailedComments").html("<img src='images/chat.png' /> " + data.commentCount);
+			
+			if (data.text != "") {
+				$("#detailedText").removeClass("hidden");
+				$("#detailedText").html("<br />" + data.text);
+				$("#detailedViewPage").addClass("hidden");
+			} else {
+				$("#detailedText").addClass("hidden");
+				$("#detailedViewPage").removeClass("hidden");
+			}
 
-			hideLoading();
+			setTimeout(function () {
+				hideLoading();
+				scrollDetail.refresh();
+			}, 0);
 			switchToSectionWithId('detailView');
 		});
 }
@@ -109,12 +141,19 @@ function goBack() {
 		setTimeout(function () {
 			scrollNew.refresh();
 		}, 0);
-	} else if (stackState == "detail_new") {
+	} else if (stackState == "ask") {
 		fadeIn("#refreshButton");
 		fadeOut("#backButton");
 		switchToSectionWithId('Ask');
 		setTimeout(function () {
 			scrollAsk.refresh();
+		}, 0);
+	} else if (stackState == "submitted") {
+		fadeIn("#refreshButton");
+		fadeOut("#backButton");
+		switchToSectionWithId('Submitted');
+		setTimeout(function () {
+			scrollSubmitted.refresh();
 		}, 0);
 	} else if (stackState == "comments") {
 		// Edit me please!!!!!!!!!!!!

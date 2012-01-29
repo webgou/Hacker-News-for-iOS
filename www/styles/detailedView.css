@@ -48,6 +48,17 @@
 	color: rgb(242, 242, 242);
 }
 
+#detailedText {
+	color: #262626;
+	font-height: 15px;
+	line-height: 19px;
+	padding-left: 2px;
+}
+
+#detailedText p {
+	margin-bottom: 19px;
+}
+
 #detailedComments img {
 	line-height: 18px;
 	max-height: 14px;
