@@ -75,20 +75,26 @@ function loadAskNews() {
 }
 
 function loadSubmitted() {
-	$.getJSON("http://api.ihackernews.com/ask",
+	if (localStorage.getItem("user") == "null") {
+		
+	} else {
+		// Do AJAX
+	}
+	
+	$.getJSON("http://api.ihackernews.com/by/" + localStorage.getItem("user"),
 		{ format: "json" },
 		function(data) {
 			$.each(data.items, function(i, item) {
-				$("#askList").append("<li class='askListItem'><a href='#" + item.id + "' onClick='detailNews(\"" + item.id + "\", \"#Ask\", \"ask\")' id='firstRow'><span class='liName'>" + item.title + "</span><span class='liAuthor'>" + item.postedBy + "</span><span class='liVotes'>" + item.points + "<br /><span class='pRead'>vts/comm</span></span><span class='liComments'>" + item.commentCount + "</span></a></li>");
+				$("#submittedList").append("<li class='submittedListItem'><a href='#" + item.id + "' onClick='detailNews(\"" + item.id + "\", \"#Submitted\", \"submitted\")' id='firstRow'><span class='liName'>" + item.title + "</span><span class='liAuthor'>" + item.postedBy + "</span><span class='liVotes'>" + item.points + "<br /><span class='pRead'>vts/comm</span></span><span class='liComments'>" + item.commentCount + "</span></a></li>");
 			});
 
-			askAlreadyLoaded = true;
-			currentList = "ask";
-			switchToSectionWithId('Ask');
+			submittedAlreadyLoaded = true;
+			currentList = "submitted";
+			switchToSectionWithId('Submitted');
 
 			setTimeout(function () {
 				hideLoading();
-				scrollAsk.refresh();
+				scrollSubmitted.refresh();
 			}, 0);
 		});
 }

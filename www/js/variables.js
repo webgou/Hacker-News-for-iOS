@@ -5,6 +5,7 @@ var nativeControls;
 var stackState = null;
 var newAlreadyLoaded = false;
 var askAlreadyLoaded = false;
+var submittedAlreadyLoaded = false;
 var currentList = "home";
 
 // Scrolling
