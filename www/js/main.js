@@ -9,6 +9,7 @@ function loaded() {
 	scrollHome = new iScroll('Home', { vScrollbar: true, hideScrollbar: true, fadeScrollbar: true });
 	scrollNew = new iScroll('New', { vScrollbar: true, hideScrollbar: true, fadeScrollbar: true });
 	scrollAsk = new iScroll('Ask', { vScrollbar: true, hideScrollbar: true, fadeScrollbar: true });
+	scrollSubmitted = new iScroll('Submitted', { vScrollbar: true, hideScrollbar: true, fadeScrollbar: true });
 	scrollDetail = new iScroll('detailView', { vScrollbar: true, hideScrollbar: true, fadeScrollbar: true });
 }
 
@@ -76,27 +77,27 @@ function loadAskNews() {
 
 function loadSubmitted() {
 	if (localStorage.getItem("user") == "null") {
-		
+		var user = prompt("Username");
+		localStorage.setItem("user", user);
+		// After the user clicks the OK button the showLoading() is called and nothing happens, put an if statement here and do the AJAX if user name was entered
 	} else {
-		// Do AJAX
-	}
-	
-	$.getJSON("http://api.ihackernews.com/by/" + localStorage.getItem("user"),
-		{ format: "json" },
-		function(data) {
-			$.each(data.items, function(i, item) {
-				$("#submittedList").append("<li class='submittedListItem'><a href='#" + item.id + "' onClick='detailNews(\"" + item.id + "\", \"#Submitted\", \"submitted\")' id='firstRow'><span class='liName'>" + item.title + "</span><span class='liAuthor'>" + item.postedBy + "</span><span class='liVotes'>" + item.points + "<br /><span class='pRead'>vts/comm</span></span><span class='liComments'>" + item.commentCount + "</span></a></li>");
+		$.getJSON("http://api.ihackernews.com/by/" + localStorage.getItem("user"),
+			{ format: "json" },
+			function(data) {
+				$.each(data.items, function(i, item) {
+					$("#submittedList").append("<li class='submittedListItem'><a href='#" + item.id + "' onClick='detailNews(\"" + item.id + "\", \"#Submitted\", \"submitted\")' id='firstRow'><span class='liName'>" + item.title + "</span><span class='liAuthor'>" + item.postedBy + "</span><span class='liVotes'>" + item.points + "<br /><span class='pRead'>vts/comm</span></span><span class='liComments'>" + item.commentCount + "</span></a></li>");
+				});
+
+				submittedAlreadyLoaded = true;
+				currentList = "submitted";
+				switchToSectionWithId('Submitted');
+
+				setTimeout(function () {
+					hideLoading();
+					scrollSubmitted.refresh();
+				}, 0);
 			});
-
-			submittedAlreadyLoaded = true;
-			currentList = "submitted";
-			switchToSectionWithId('Submitted');
-
-			setTimeout(function () {
-				hideLoading();
-				scrollSubmitted.refresh();
-			}, 0);
-		});
+	}
 }
 
 function detailNews(id, view, stack) {

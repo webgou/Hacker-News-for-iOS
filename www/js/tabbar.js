@@ -83,13 +83,21 @@ function loadTabBar() {
 		"Submitted",
 		"/www/tabs/submitted.png",
 		{"onSelect": function() {
+			currentList = "submitted";
+
 			fadeIn("#refreshButton");
 			fadeOut("#backButton");
-			loadFinished();
-			switchToSectionWithId('Submitted');
-			setTimeout(function () {
-				scrollStats.refresh();
-			}, 0);
+
+			if (submittedAlreadyLoaded == false) {
+				switchToSectionWithId('Submitted');
+				showLoading();
+				loadSubmitted();
+			} else {
+				switchToSectionWithId('Submitted');
+				setTimeout(function () {
+					scrollSubmitted.refresh();
+				}, 0);
+			}
 		}}
 	);
 	
