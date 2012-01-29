@@ -1,0 +1,56 @@
+#Home {
+	position: absolute;
+	top: 44px;
+	left: 0;
+	width: 100%;
+	height: 367px;
+}
+
+#New {
+	position: absolute;
+	top: 44px;
+	left: 0;
+	width: 100%;
+	height: 367px;
+}
+
+#Ask {
+	position: absolute;
+	top: 44px;
+	left: 0;
+	width: 100%;
+	height: 367px;
+}
+
+#Submitted {
+	position: absolute;
+	top: 44px;
+	left: 0;
+	width: 100%;
+	height: 367px;
+}
+
+#detailView {
+	position: absolute;
+	top: 44px;
+	left: 0;
+	width: 100%;
+	height: 367px;
+}
+
+#commentView {
+	position: absolute;
+	top: 44px;
+	left: 0;
+	width: 100%;
+	height: 367px;
+}
+
+#Settings {
+	position: absolute;
+	top: 44px;
+	left: 0;
+	width: 100%;
+	height: 367px;
+	background-color: rgb(242, 242, 242);
+}

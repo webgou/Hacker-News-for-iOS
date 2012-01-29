@@ -1,0 +1,50 @@
+#backButton {
+	position: absolute;
+	z-index: 1001;
+	top: 3px;
+	left: 5px;
+	height: 44px;
+	width: 64px;
+	text-align: center;
+	background-image: url("../images/backButton.png");
+	background-size: 64px 37px;
+	background-repeat: no-repeat;
+	-webkit-user-select: none;
+	-webkit-tap-highlight-color: transparent;
+}
+
+#backButton p {
+	padding-top: 11px;
+	padding-left: 8px;
+	font-size: 15px;
+	-webkit-user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	text-rendering: optimizeLegibility;
+}
+
+#refreshButton {
+	position: absolute;
+	z-index: 1001;
+	top: 3px;
+	right: 5px;
+	height: 44px;
+	width: 50px;
+	text-align: center;
+	background-image: url("../images/Button.png");
+	background-size: 50px 37px;
+	background-repeat: no-repeat;
+	-webkit-user-select: none;
+	/*-webkit-tap-highlight-color: transparent;*/
+}
+
+#refreshButton p {
+	padding-top: 11px;
+	font-size: 15px;
+	-webkit-user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	text-rendering: optimizeLegibility;
+}
+
+#refreshButton p img {
+	max-height: 15px;
+}
