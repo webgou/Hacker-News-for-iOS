@@ -11,6 +11,7 @@ function loaded() {
 	scrollAsk = new iScroll('Ask', { vScrollbar: true, hideScrollbar: true, fadeScrollbar: true });
 	scrollSubmitted = new iScroll('Submitted', { vScrollbar: true, hideScrollbar: true, fadeScrollbar: true });
 	scrollDetail = new iScroll('detailView', { vScrollbar: true, hideScrollbar: true, fadeScrollbar: true });
+	scrollComments = new iScroll('commentView', { vScrollbar: true, hideScrollbar: true, fadeScrollbar: true });
 }
 
 function onDeviceReady() {
@@ -127,6 +128,10 @@ function detailNews(id, view, stack) {
 				$("#detailedText").addClass("hidden");
 				$("#detailedViewPage").removeClass("hidden");
 			}
+			
+			$("#detailedViewComments").click(function() {
+				loadComments(data.id)
+			});
 
 			setTimeout(function () {
 				hideLoading();
@@ -139,9 +144,23 @@ function detailNews(id, view, stack) {
 function loadComments(id) {
 	var url = "http://api.ihackernews.com/post/" + id;
 	fadeOut("#detailView");
-	fadeIn("#backButton");
-	fadeOut("#refreshButton");
 	showLoading();
+	
+	$.getJSON(url,
+		{ format: "json" },
+		function(data) {
+			$(".commentListItem").remove();
+
+			$.each(data.comments, function(i, item) {
+				$("#commentViewScroller").append("<div class='commentListItem'><div class='commentAuthor'><b>" + item.postedBy + "</b></div><div class='commentMessage'>" + item.comment + "</div><div class='commentVtAgo'>" + item.points + " votes, " + item.postedAgo + "</div></div>");
+			});
+
+			setTimeout(function () {
+				hideLoading();
+				scrollComments.refresh();
+			}, 0);
+			switchToSectionWithId('commentView');
+		});
 }
 
 function goBack() {

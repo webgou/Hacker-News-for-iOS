@@ -15,6 +15,8 @@ function refreshList(list) {
 		showLoading();
 		loadAskNews();
 	} else if (list == "submitted") {
-		// do submitted here
+		$(".submittedListItem").remove();
+		showLoading();
+		loadSubmitted();
 	}
 }

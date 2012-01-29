@@ -14,3 +14,4 @@ var scrollNew = null;
 var scrollAsk = null;
 var scrollDetail = null;
 var scrollSubmitted = null;
+var scrollComments = null;
