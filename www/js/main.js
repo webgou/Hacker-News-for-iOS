@@ -16,6 +16,7 @@ function loaded() {
 
 function onDeviceReady() {
 	loadTabBar();
+	childBrowser = ChildBrowser.install();
 	switchToSectionWithId('Home');
 	nativeControls.selectTabBarItem("home");
 
@@ -128,9 +129,11 @@ function detailNews(id, view, stack) {
 				$("#detailedText").addClass("hidden");
 				$("#detailedViewPage").removeClass("hidden");
 			}
-			
+
+			$("#vPage").html("<div id='detailedViewPage' onClick='window.plugins.childBrowser.showWebPage(\"" + data.url + "\")' class='apple-button-box'><center class='apple-text'><b>Read Article</b></center></div>");
+
 			$("#detailedViewComments").click(function() {
-				loadComments(data.id)
+				loadComments(data.id, stack);
 			});
 
 			setTimeout(function () {
@@ -141,16 +144,17 @@ function detailNews(id, view, stack) {
 		});
 }
 
-function loadComments(id) {
+function loadComments(id, bStack) {
+	stackState = "comments";
+	bcStack = bStack;
 	var url = "http://api.ihackernews.com/post/" + id;
+	$(".commentListItem").remove();
 	fadeOut("#detailView");
 	showLoading();
 	
 	$.getJSON(url,
 		{ format: "json" },
 		function(data) {
-			$(".commentListItem").remove();
-
 			$.each(data.comments, function(i, item) {
 				$("#commentViewScroller").append("<div class='commentListItem'><div class='commentAuthor'><b>" + item.postedBy + "</b></div><div class='commentMessage'>" + item.comment + "</div><div class='commentVtAgo'>" + item.points + " votes, " + item.postedAgo + "</div></div>");
 			});
@@ -193,11 +197,10 @@ function goBack() {
 			scrollSubmitted.refresh();
 		}, 0);
 	} else if (stackState == "comments") {
-		// Edit me please!!!!!!!!!!!!
-		fadeIn("#backButton");
-		switchToSectionWithId('Home');
+		stackState = bcStack;
+		switchToSectionWithId('detailView');
 		setTimeout(function () {
-			scrollBooks.refresh();
+			scrollDetail.refresh();
 		}, 0);
 	} else {
 		alert("Nothing to do here...");

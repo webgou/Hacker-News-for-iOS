@@ -2,11 +2,15 @@
 // Variables file
 
 var nativeControls;
+var childBrowser;
+
 var stackState = null;
 var newAlreadyLoaded = false;
 var askAlreadyLoaded = false;
 var submittedAlreadyLoaded = false;
 var currentList = "home";
+
+var bcStack = null;
 
 // Scrolling
 var scrollHome = null;

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D847118314D64C26003664EA /* ChildBrowser.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D847117C14D64C26003664EA /* ChildBrowser.bundle */; };
+		D847118514D64C26003664EA /* ChildBrowserCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = D847117F14D64C26003664EA /* ChildBrowserCommand.m */; };
+		D847118614D64C26003664EA /* ChildBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D847118114D64C26003664EA /* ChildBrowserViewController.m */; };
+		D847118714D64C26003664EA /* ChildBrowserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D847118214D64C26003664EA /* ChildBrowserViewController.xib */; };
 		D88E3F7614D347BA00837C07 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88E3F7514D347BA00837C07 /* Foundation.framework */; };
 		D88E3F7814D347BA00837C07 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88E3F7714D347BA00837C07 /* UIKit.framework */; };
 		D88E3F7A14D347BA00837C07 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D88E3F7914D347BA00837C07 /* CoreGraphics.framework */; };
@@ -39,6 +43,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D847117C14D64C26003664EA /* ChildBrowser.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ChildBrowser.bundle; sourceTree = "<group>"; };
+		D847117E14D64C26003664EA /* ChildBrowserCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChildBrowserCommand.h; sourceTree = "<group>"; };
+		D847117F14D64C26003664EA /* ChildBrowserCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChildBrowserCommand.m; sourceTree = "<group>"; };
+		D847118014D64C26003664EA /* ChildBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChildBrowserViewController.h; sourceTree = "<group>"; };
+		D847118114D64C26003664EA /* ChildBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChildBrowserViewController.m; sourceTree = "<group>"; };
+		D847118214D64C26003664EA /* ChildBrowserViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChildBrowserViewController.xib; sourceTree = "<group>"; };
 		D88E3F7114D347BA00837C07 /* Hacker News.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hacker News.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D88E3F7514D347BA00837C07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D88E3F7714D347BA00837C07 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -214,6 +224,12 @@
 		D88E3FB714D347BB00837C07 /* Plugins */ = {
 			isa = PBXGroup;
 			children = (
+				D847117C14D64C26003664EA /* ChildBrowser.bundle */,
+				D847117E14D64C26003664EA /* ChildBrowserCommand.h */,
+				D847117F14D64C26003664EA /* ChildBrowserCommand.m */,
+				D847118014D64C26003664EA /* ChildBrowserViewController.h */,
+				D847118114D64C26003664EA /* ChildBrowserViewController.m */,
+				D847118214D64C26003664EA /* ChildBrowserViewController.xib */,
 				D88E3FCD14D4D4FF00837C07 /* Prompt.h */,
 				D88E3FCE14D4D4FF00837C07 /* Prompt.m */,
 				D88E3FCA14D349B300837C07 /* NativeControls.h */,
@@ -289,6 +305,8 @@
 				D88E3FC514D348A200837C07 /* Default.png in Resources */,
 				D88E3FC714D348A400837C07 /* Default@2x.png in Resources */,
 				D88E3FC914D3490100837C07 /* www in Resources */,
+				D847118314D64C26003664EA /* ChildBrowser.bundle in Resources */,
+				D847118714D64C26003664EA /* ChildBrowserViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,6 +337,8 @@
 				D88E3FB614D347BB00837C07 /* AppDelegate.m in Sources */,
 				D88E3FCC14D349B300837C07 /* NativeControls.m in Sources */,
 				D88E3FCF14D4D4FF00837C07 /* Prompt.m in Sources */,
+				D847118514D64C26003664EA /* ChildBrowserCommand.m in Sources */,
+				D847118614D64C26003664EA /* ChildBrowserViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,6 +477,7 @@
 				D88E3FBD14D347BB00837C07 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

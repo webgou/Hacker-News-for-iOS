@@ -20,6 +20,8 @@
 	<array/>
 	<key>Plugins</key>
 	<dict>
+		<key>ChildBrowserCommand</key>
+		<string>ChildBrowserCommand</string>
 		<key>NativeControls</key>
 		<string>NativeControls</string>
 		<key>Prompt</key>
