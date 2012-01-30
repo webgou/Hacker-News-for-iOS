@@ -4,7 +4,7 @@ This app was designed to provide a great and beautiful experience for the Hacker
 
 ## Screenshots
 
-![Home Page][3] ![Detail View][4] ![Ask HN Detail View][5] ![Comment View][6]
+![Home Page][3] . ![Detail View][4] ![Ask HN Detail View][5] . ![Comment View][6]
 
 ## Technologies used
 
