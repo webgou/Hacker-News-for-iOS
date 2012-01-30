@@ -120,6 +120,8 @@ function detailNews(id, view, stack) {
 			$("#detailedAuthor").text("posted by " + data.postedBy + " " + data.postedAgo);
 			$("#detailedVotes").html("<img src='images/heart.png' /> " + data.points);
 			$("#detailedComments").html("<img src='images/chat.png' /> " + data.commentCount);
+
+			$("#vPage").html("<div id='detailedViewPage' onClick='window.plugins.childBrowser.showWebPage(\"" + data.url + "\")' class='apple-button-box'><center class='apple-text'><b>Read Article</b></center></div>");
 			
 			if (data.text != "") {
 				$("#detailedText").removeClass("hidden");
@@ -129,8 +131,6 @@ function detailNews(id, view, stack) {
 				$("#detailedText").addClass("hidden");
 				$("#detailedViewPage").removeClass("hidden");
 			}
-
-			$("#vPage").html("<div id='detailedViewPage' onClick='window.plugins.childBrowser.showWebPage(\"" + data.url + "\")' class='apple-button-box'><center class='apple-text'><b>Read Article</b></center></div>");
 
 			$("#detailedViewComments").click(function() {
 				loadComments(data.id, stack);
